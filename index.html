@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>~*~ PETER'S AWESOME PORTFOLIO ~*~ WELCOME TO MY HOME PAGE!!! ~*~</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Comic Neue', cursive, Arial, sans-serif;
+            background: #ff00ff url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="50" cy="50" r="40" fill="%23ffff00" opacity="0.3"/></svg>') repeat;
+            background-size: 200px 200px;
+            color: #000;
+            cursor: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"><circle cx="12" cy="12" r="10" fill="%23ff00ff"/><circle cx="12" cy="12" r="5" fill="%23ffff00"/></svg>'), auto;
+            animation: bgShift 3s infinite;
+        }
+        
+        @keyframes bgShift {
+            0%, 100% { background-position: 0 0; }
+            50% { background-position: 50px 50px; }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            border: 10px solid #00ffff;
+            box-shadow: 0 0 30px #ff00ff, inset 0 0 30px #ffff00;
+            position: relative;
+        }
+        
+        .header {
+            text-align: center;
+            background: linear-gradient(45deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+            background-size: 400% 400%;
+            animation: rainbow 3s ease infinite;
+            padding: 30px;
+            border: 5px dashed #000;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        @keyframes rainbow {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .blink {
+            animation: blink 1s infinite;
+        }
+        
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+        
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            background: #000;
+            color: #ffff00;
+            padding: 10px;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px 0;
+            border: 3px solid #ff00ff;
+        }
+        
+        .marquee-content {
+            display: inline-block;
+            animation: marquee 15s linear infinite;
+        }
+        
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        
+        h1 {
+            font-size: 48px;
+            color: #000;
+            text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ffff;
+            margin: 10px 0;
+            transform: rotate(-2deg);
+        }
+        
+        h2 {
+            font-size: 32px;
+            color: #ff00ff;
+            text-shadow: 2px 2px 0 #000;
+            margin: 20px 0 10px;
+            border-bottom: 5px dotted #00ffff;
+            padding-bottom: 5px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            color: #0000ff;
+            margin: 15px 0 5px;
+        }
+        
+        .visitor-counter {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: #000;
+            color: #00ff00;
+            padding: 10px;
+            border: 3px solid #ff00ff;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 0 10px #ffff00;
+        }
+        
+        .under-construction {
+            background: #ffff00;
+            border: 5px solid #ff0000;
+            padding: 10px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 20px;
+            margin: 20px 0;
+            transform: rotate(2deg);
+            animation: shake 0.5s infinite;
+        }
+        
+        @keyframes shake {
+            0%, 100% { transform: rotate(2deg); }
+            50% { transform: rotate(-2deg); }
+        }
+        
+        .section {
+            background: #fff;
+            border: 5px solid #00ffff;
+            padding: 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .section::before {
+            content: '★';
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: #fff;
+            padding: 5px 10px;
+            font-size: 24px;
+            color: #ff00ff;
+        }
+        
+        .experience-item {
+            background: #ffffcc;
+            border: 3px solid #000;
+            padding: 15px;
+            margin: 15px 0;
+            border-left: 10px solid #ff00ff;
+        }
+        
+        .experience-item:nth-child(even) {
+            background: #ccffff;
+            border-left-color: #00ffff;
+        }
+        
+        .experience-item:nth-child(3n) {
+            background: #ffccff;
+            border-left-color: #ffff00;
+        }
+        
+        .skill-tag {
+            display: inline-block;
+            background: #000;
+            color: #ffff00;
+            padding: 5px 10px;
+            margin: 5px;
+            border: 2px solid #ff00ff;
+            transform: rotate(-1deg);
+            font-size: 14px;
+        }
+        
+        .skill-tag:nth-child(even) {
+            transform: rotate(1deg);
+            background: #ff00ff;
+            color: #fff;
+        }
+        
+        .skill-tag:nth-child(3n) {
+            transform: rotate(-2deg);
+            background: #00ffff;
+            color: #000;
+        }
+        
+        .post-item {
+            background: #fff;
+            border: 3px dashed #000;
+            padding: 15px;
+            margin: 15px 0;
+            background-image: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 10px,
+                #ffff00 10px,
+                #ffff00 20px
+            );
+        }
+        
+        .recommendation {
+            background: #e6ffe6;
+            border: 4px double #00ff00;
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+        }
+        
+        .neopets-banner {
+            text-align: center;
+            background: #fff;
+            border: 5px solid #ff00ff;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .sparkle {
+            display: inline-block;
+            animation: sparkle 1s infinite;
+        }
+        
+        @keyframes sparkle {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        .rotating {
+            display: inline-block;
+            animation: rotate 3s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .bounce {
+            display: inline-block;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+        }
+        
+        td, th {
+            border: 3px solid #000;
+            padding: 10px;
+            background: #ffffcc;
+        }
+        
+        th {
+            background: #ff00ff;
+            color: #fff;
+            font-size: 18px;
+        }
+        
+        .contact-info {
+            background: #000;
+            color: #00ff00;
+            padding: 15px;
+            font-family: 'Courier New', monospace;
+            border: 5px solid #ffff00;
+            margin: 20px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background: #000;
+            color: #ffff00;
+            border-top: 5px solid #ff00ff;
+            margin-top: 30px;
+        }
+        
+        .emoji-large {
+            font-size: 48px;
+            display: inline-block;
+            animation: wiggle 2s infinite;
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+        
+        .stats-box {
+            background: #000;
+            color: #00ff00;
+            padding: 15px;
+            border: 3px solid #ff00ff;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .glow {
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="visitor-counter">
+        <div>★ VISITOR #<span id="counter">1337</span> ★</div>
+        <div>Last updated: <span id="date"></span></div>
+    </div>
+    
+    <div class="container">
+        <div class="header">
+            <h1 class="bounce">★ WELCOME TO PETER'S AWESOME PAGE! ★</h1>
+            <div class="blink" style="font-size: 28px; color: #000;">
+                <span class="sparkle">✨</span> PETER A. ESCARTIN <span class="sparkle">✨</span>
+            </div>
+            <div style="font-size: 24px; margin-top: 10px;">
+                <span class="rotating">⚙️</span> Solutions Engineer @ Notion <span class="rotating">⚙️</span>
+            </div>
+            <div style="font-size: 20px; margin-top: 10px; color: #000;">
+                San Francisco Bay Area <span class="sparkle">🌉</span>
+            </div>
+        </div>
+        
+        <div class="marquee">
+            <div class="marquee-content">
+                ★ LIVE. LAUGH. SOLUTIONS. ★ 500+ CONNECTIONS ★ 1,760 FOLLOWERS ★ OPEN TO OPPORTUNITIES ★
+            </div>
+        </div>
+        
+        <div class="under-construction">
+            ⚠️ THIS PAGE IS ALWAYS UNDER CONSTRUCTION! ⚠️ (Just like my career journey! 😄)
+        </div>
+        
+        <div class="neopets-banner">
+            <h2 class="glow">🎮 ABOUT ME 🎮</h2>
+            <p style="font-size: 20px; margin: 15px 0;">
+                <span class="emoji-large">💼</span> Live. Laugh. Solutions. <span class="emoji-large">💼</span>
+            </p>
+            <p style="font-size: 18px;">
+                Hey there! I'm Peter, a Solutions Engineer at Notion, and I'm here to solve problems and have fun doing it! 
+                <span class="sparkle">✨</span> Welcome to my chaotic corner of the internet! <span class="sparkle">✨</span>
+            </p>
+        </div>
+        
+        <div class="section">
+            <h2>📊 MY STATS 📊</h2>
+            <div class="stats-box">
+                <div>★ Profile Views: 228</div>
+                <div>★ Post Impressions: 42</div>
+                <div>★ Search Appearances: 78 (Past 7 days)</div>
+                <div>★ Connections: 500+</div>
+                <div>★ Followers: 1,760</div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>💼 EXPERIENCE 💼</h2>
+            
+            <div class="experience-item">
+                <h3>🔧 Solutions Engineer @ Notion</h3>
+                <p><strong>Jan 2024 - Present · 2 yrs 1 mo</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+                <p style="margin-top: 10px;">Making the world more productive, one solution at a time! 🚀</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Solutions Engineer | Strategic Enterprise - Amazon Account @ Asana</h3>
+                <p><strong>Jan 2023 - Dec 2023 · 1 yr</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+                <p style="margin-top: 10px;">👤 Dedicated SE in Account Pod - Supporting $XXm ARR</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Solutions Engineer | Mid-Market @ Asana</h3>
+                <p><strong>Jun 2020 - Jan 2023 · 2 yrs 8 mos</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+                <p style="margin-top: 10px;">
+                    🏆 2x President's Club Winner! 🎊<br>
+                    🎊 Asana goes public, September 30, 2020 🎊
+                </p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Customer Success | On-Boarding Consultant & Professional Services @ Asana</h3>
+                <p><strong>Feb 2019 - Jun 2020 · 1 yr 5 mos</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Senior Implementation Manager @ Accelo</h3>
+                <p><strong>Oct 2018 - Feb 2019 · 5 mos</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Implementation Manager @ Accelo</h3>
+                <p><strong>Feb 2018 - Oct 2018 · 9 mos</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Customer Success, Implementations @ Accelo</h3>
+                <p><strong>Feb 2017 - Feb 2018 · 1 yr 1 mo</strong></p>
+                <p>San Francisco Bay Area</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Customer Success @ Twenty20 Inc.</h3>
+                <p><strong>Jul 2016 - Oct 2016 · 4 mos</strong></p>
+                <p>Marina Del Rey, California</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Facilities Coordinator @ OpenX</h3>
+                <p><strong>Apr 2015 - Jul 2016 · 1 yr 4 mos</strong></p>
+                <p>Pasadena, California</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Office Admin @ OpenX</h3>
+                <p><strong>Oct 2013 - Apr 2015 · 1 yr 7 mos</strong></p>
+                <p>Pasadena, California</p>
+                <p>Full-time</p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>🔧 Facilities Assistant @ OpenX</h3>
+                <p><strong>Nov 2012 - Oct 2013 · 1 yr</strong></p>
+                <p>Pasadena, California</p>
+                <p>Full-time</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🎯 SKILLS 🎯</h2>
+            <div style="margin: 20px 0;">
+                <span class="skill-tag">Online Advertising (25 endorsements)</span>
+                <span class="skill-tag">Social Media (20 endorsements)</span>
+                <span class="skill-tag">Solutions Engineering</span>
+                <span class="skill-tag">Customer Success</span>
+                <span class="skill-tag">Implementation</span>
+                <span class="skill-tag">Professional Services</span>
+                <span class="skill-tag">Enterprise Solutions</span>
+                <span class="skill-tag">Account Management</span>
+                <span class="skill-tag">Problem Solving</span>
+                <span class="skill-tag">Communication</span>
+                <span class="skill-tag">Team Leadership</span>
+                <span class="skill-tag">Strategic Planning</span>
+                <span class="skill-tag">Technical Consulting</span>
+                <span class="skill-tag">Onboarding</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">Sales Engineering</span>
+                <span class="skill-tag">Client Relations</span>
+                <span class="skill-tag">Training & Development</span>
+                <span class="skill-tag">Process Improvement</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>📝 RECENT POSTS 📝</h2>
+            
+            <div class="post-item">
+                <h3>🌟 Going to AWS re:Invent?</h3>
+                <p><strong>Posted 1 month ago</strong></p>
+                <p>Going to Vegas for #AWSreinvent? Then I hope to see you there! Come swing by the Notion booth to say hello or reach out to grab a coffee!</p>
+                <p style="margin-top: 10px; color: #ff00ff;">💖 39 likes</p>
+            </div>
+            
+            <div class="post-item">
+                <h3>🎉 Make With Notion 2025 was a success!</h3>
+                <p><strong>Posted 4 months ago</strong></p>
+                <p>Make With Notion 2025 was a success! Such an amazing time with the coolest SE's (and Demand Gen) team around.... And what a perfect time to mention we're hiring! We'd love to have you!</p>
+                <p>MWN was truly special and a great time for the Notion community! Cheers everyone on the Notion side who put so much care, diligence and effort to make sure it went off without a hitch.</p>
+                <p>Also, shoutout to Thomas Frank for stopping by and creating content that the community, and employees alike, have benefitted from!</p>
+                <p style="margin-top: 10px; color: #ff00ff;">💖 144 likes · 8 comments</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>⭐ RECOMMENDATIONS ⭐</h2>
+            
+            <div class="recommendation">
+                <h3>Dan Smith</h3>
+                <p><strong>May 29, 2020</strong> - Dan was Peter A.'s teacher</p>
+                <p style="margin-top: 10px;">
+                    "Peter has successfully completed the Asana Customer Success Academy as one of the highest performing participants in 2020. 
+                    Throughout the course he has proven a superior understanding and the ability to quickly apply new sales and communication frameworks – he is an exceptional asset to the team. 
+                    I am impressed by Peter's eloquent style of communication - especially under pressure. He always performed role plays and coached others with the end goal in mind, and we were all able to get more out of each class because he was there. 
+                    Congratulations on this amazing result and dedication to helping your customers solve problems and achieve success."
+                </p>
+            </div>
+            
+            <div class="recommendation">
+                <h3>Ben Green</h3>
+                <p><strong>March 21, 2017</strong> - Ben worked with Peter A. but on different teams</p>
+                <p style="margin-top: 10px;">
+                    "Peter is diligent and hardworking, with an engaging personality that makes him a pleasure to be around. 
+                    He's the consummate team player - an asset to any company lucky enough to employ him."
+                </p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>🤝 VOLUNTEERING 🤝</h2>
+            
+            <div class="experience-item">
+                <h3>🎤 Event Host/Sponsor @ Innovate Pasadena</h3>
+                <p><strong>Jan 2014 - Jan 2016 · 2 yrs</strong></p>
+            </div>
+            
+            <div class="experience-item">
+                <h3>⛳ Golf Tournament Volunteer @ The Midnight Mission</h3>
+                <p><strong>Aug 2012 · 1 mo</strong></p>
+                <p>Social Services</p>
+            </div>
+        </div>
+        
+        <div class="contact-info">
+            <h2 style="color: #00ff00; border-bottom: 2px solid #00ff00;">📧 CONTACT INFO 📧</h2>
+            <p style="margin-top: 10px;">San Francisco Bay Area</p>
+            <p>500+ connections</p>
+            <p>Open to opportunities</p>
+            <p style="margin-top: 15px; color: #ffff00;">★ Add me on LinkedIn! ★</p>
+        </div>
+        
+        <div class="footer">
+            <p class="blink">★ THANKS FOR VISITING! ★</p>
+            <p style="margin-top: 10px;">
+                <span class="sparkle">✨</span> 
+                This page was made with love, chaos, and pure 90s energy! 
+                <span class="sparkle">✨</span>
+            </p>
+            <p style="margin-top: 10px; font-size: 14px;">
+                Last updated: <span id="footer-date"></span>
+            </p>
+            <p style="margin-top: 10px;">
+                <span class="rotating">🔄</span> 
+                Best viewed in Netscape Navigator 4.0 or Internet Explorer 5.0 
+                <span class="rotating">🔄</span>
+            </p>
+        </div>
+    </div>
+    
+    <script>
+        // Visitor counter (fake but fun!)
+        let counter = localStorage.getItem('visitorCounter') || 1337;
+        counter = parseInt(counter) + Math.floor(Math.random() * 5) + 1;
+        localStorage.setItem('visitorCounter', counter);
+        document.getElementById('counter').textContent = counter;
+        
+        // Date
+        const now = new Date();
+        const dateStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString();
+        document.getElementById('date').textContent = dateStr;
+        document.getElementById('footer-date').textContent = dateStr;
+        
+        // Add some random sparkles
+        function createSparkle() {
+            const sparkle = document.createElement('div');
+            sparkle.innerHTML = '✨';
+            sparkle.style.position = 'fixed';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.fontSize = '20px';
+            sparkle.style.pointerEvents = 'none';
+            sparkle.style.animation = 'sparkle 2s ease-out forwards';
+            sparkle.style.zIndex = '9999';
+            document.body.appendChild(sparkle);
+            setTimeout(() => sparkle.remove(), 2000);
+        }
+        
+        // Create sparkles periodically
+        setInterval(createSparkle, 3000);
+        
+        // Make skill tags interactive
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function() {
+                this.style.transform = 'rotate(0deg) scale(1.2)';
+                this.style.transition = 'all 0.3s';
+            });
+            tag.addEventListener('mouseleave', function() {
+                this.style.transform = 'rotate(-1deg) scale(1)';
+            });
+        });
+        
+        // Add cursor trail effect
+        let trail = [];
+        document.addEventListener('mousemove', function(e) {
+            if (trail.length > 5) {
+                const old = trail.shift();
+                if (old) old.remove();
+            }
+            const dot = document.createElement('div');
+            dot.style.position = 'fixed';
+            dot.style.left = e.clientX + 'px';
+            dot.style.top = e.clientY + 'px';
+            dot.style.width = '10px';
+            dot.style.height = '10px';
+            dot.style.background = '#ff00ff';
+            dot.style.borderRadius = '50%';
+            dot.style.pointerEvents = 'none';
+            dot.style.zIndex = '9998';
+            dot.style.animation = 'fadeOut 1s forwards';
+            document.body.appendChild(dot);
+            trail.push(dot);
+        });
+        
+        // Add fadeOut animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeOut {
+                to { opacity: 0; transform: scale(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
