@@ -1,0 +1,18 @@
+{
+  "name": "repeat-handoff-demo",
+  "version": "1.0.0",
+  "description": "Demo for repeat handoff scenarios with synthetic Fin conversations",
+  "type": "module",
+  "scripts": {
+    "test": "node --import tsx --test demo/repeat-handoff/fixtures.test.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

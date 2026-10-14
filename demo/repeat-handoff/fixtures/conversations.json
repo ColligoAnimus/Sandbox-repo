@@ -1,0 +1,131 @@
+[
+  {
+    "id": "repeat_loop",
+    "turns": [
+      {
+        "role": "user",
+        "text": "I need help with my billing issue",
+        "turnId": "t1"
+      },
+      {
+        "role": "fin",
+        "text": "I can help you with billing questions. What specific issue are you experiencing?",
+        "turnId": "t2"
+      },
+      {
+        "role": "user",
+        "text": "My card was charged twice",
+        "turnId": "t3"
+      },
+      {
+        "role": "fin",
+        "text": "I understand you're seeing duplicate charges. Can you provide the transaction dates?",
+        "turnId": "t4"
+      },
+      {
+        "role": "user",
+        "text": "I already told you, I just need this fixed",
+        "turnId": "t5"
+      },
+      {
+        "role": "fin",
+        "text": "I apologize for the confusion. Can you provide the transaction dates so I can help resolve this?",
+        "turnId": "t6"
+      }
+    ],
+    "failureSignal": {
+      "repeatLoop": true,
+      "declined": false,
+      "explicitHumanRequest": false,
+      "supportUnavailable": false
+    }
+  },
+  {
+    "id": "declined_offer",
+    "turns": [
+      {
+        "role": "user",
+        "text": "How do I reset my password?",
+        "turnId": "t1"
+      },
+      {
+        "role": "fin",
+        "text": "I can help you reset your password. Would you like me to send you a reset link?",
+        "turnId": "t2"
+      },
+      {
+        "role": "user",
+        "text": "Yes please",
+        "turnId": "t3"
+      },
+      {
+        "role": "fin",
+        "text": "I've sent a password reset link to your email. If you need further assistance, I can connect you with our support team.",
+        "turnId": "t4"
+      },
+      {
+        "role": "user",
+        "text": "No thanks, I'll try this first",
+        "turnId": "t5"
+      }
+    ],
+    "failureSignal": {
+      "repeatLoop": false,
+      "declined": true,
+      "explicitHumanRequest": false,
+      "supportUnavailable": false
+    }
+  },
+  {
+    "id": "explicit_human",
+    "turns": [
+      {
+        "role": "user",
+        "text": "I want to speak to a real person",
+        "turnId": "t1"
+      },
+      {
+        "role": "fin",
+        "text": "I understand you'd like to speak with someone from our team. Let me connect you with a support agent.",
+        "turnId": "t2"
+      }
+    ],
+    "failureSignal": {
+      "repeatLoop": false,
+      "declined": false,
+      "explicitHumanRequest": true,
+      "supportUnavailable": false
+    }
+  },
+  {
+    "id": "support_unavailable",
+    "turns": [
+      {
+        "role": "user",
+        "text": "I need help urgently",
+        "turnId": "t1"
+      },
+      {
+        "role": "fin",
+        "text": "I'd like to help you right away. However, our support team is currently offline. They're available Monday-Friday 9am-5pm EST.",
+        "turnId": "t2"
+      },
+      {
+        "role": "user",
+        "text": "Can someone call me when they're back?",
+        "turnId": "t3"
+      },
+      {
+        "role": "fin",
+        "text": "I'll create a support ticket for you. Our team will reach out as soon as they're available.",
+        "turnId": "t4"
+      }
+    ],
+    "failureSignal": {
+      "repeatLoop": false,
+      "declined": false,
+      "explicitHumanRequest": false,
+      "supportUnavailable": true
+    }
+  }
+]
