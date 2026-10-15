@@ -4,7 +4,9 @@
   "description": "Demo for repeat-handoff scenarios",
   "type": "module",
   "scripts": {
-    "demo:repeat-handoff": "tsx demo/repeat-handoff/run.ts"
+    "demo:repeat-handoff": "tsx demo/repeat-handoff/run.ts",
+    "export:cli": "tsx src/export-cli.ts",
+    "test": "tsx src/csv-export.test.ts"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
