@@ -4,7 +4,9 @@
   "description": "Demo for repeat-handoff scenarios",
   "type": "module",
   "scripts": {
-    "demo:repeat-handoff": "tsx demo/repeat-handoff/run.ts"
+    "demo:repeat-handoff": "tsx demo/repeat-handoff/run.ts",
+    "demo:field-visibility": "tsx demo/fixtures/field-visibility-demo.ts",
+    "test:field-visibility": "tsx demo/fixtures/field-visibility.test.ts"
   },
   "devDependencies": {
     "tsx": "^4.7.0",
