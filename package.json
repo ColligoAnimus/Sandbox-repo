@@ -1,0 +1,13 @@
+{
+  "name": "repeat-handoff-demo",
+  "version": "1.0.0",
+  "description": "Demo for repeat-handoff scenarios",
+  "type": "module",
+  "scripts": {
+    "demo:repeat-handoff": "tsx demo/repeat-handoff/run.ts"
+  },
+  "devDependencies": {
+    "tsx": "^4.7.0",
+    "typescript": "^5.3.3"
+  }
+}
