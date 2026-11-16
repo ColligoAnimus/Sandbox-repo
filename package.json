@@ -5,8 +5,10 @@
   "type": "module",
   "scripts": {
     "demo:repeat-handoff": "tsx demo/repeat-handoff/run.ts",
+    "demo:field-inventory": "tsx demo/field-inventory/demo.ts",
     "test": "tsx --test demo/**/*.test.ts",
-    "test:inventory": "tsx --test demo/field-inventory/inventory.test.ts"
+    "test:inventory": "tsx --test demo/field-inventory/inventory.test.ts",
+    "test:screen": "tsx --test demo/field-inventory/screen.test.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.5",
